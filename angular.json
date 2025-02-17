@@ -21,13 +21,16 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "@angular/material/prebuilt-themes/cyan-orange.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -84,18 +87,24 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "@angular/material/prebuilt-themes/cyan-orange.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "238ec001-39c8-44f1-8647-a62f6ae515c0"
   }
 }
