@@ -1,0 +1,60 @@
+<h1>Contact</h1>
+<form [formGroup]="contactForm">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <!-- <mat-grid-tile colspan="4" rowspan="0.5">
+        <h6>Thank you for visiting my portfolio! I’m always looking for new opportunities to learn and grow, and I’d love to hear from you. Whether you’re interested in collaborating on a project, have a question, or just want to connect, feel free to reach out. I look forward to working together!</h6>
+    </mat-grid-tile> -->
+    
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" placeholder="Enter your first name">
+        <mat-error *ngIf="contactForm.get('firstName')?.hasError('required')">
+          First name is required
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" placeholder="Enter your last name">
+        <mat-error *ngIf="contactForm.get('lastName')?.hasError('required')">
+          Last name is required
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email">
+        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="4" rowspan="2">
+      <mat-form-field appearance="outline" style="width: 95%;">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" placeholder="Enter your message" rows="4"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          Message is required
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div style="text-align: right; width: 100%;">
+    <button style="float: left; margin-left: 2.5%;" mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Submit</button>
+    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+      <i class="fab fa-linkedin"></i>
+    </button>
+    <button style="margin-right: 2%;" mat-icon-button aria-label="Example icon button with a open in new tab icon">
+      <i class="fab fa-github"></i>
+    </button>
+  </div>
+</form>

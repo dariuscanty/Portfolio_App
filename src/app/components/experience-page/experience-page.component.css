@@ -1,0 +1,95 @@
+.custom-marker {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.card {
+  background-color: var(--primary-bg-color);
+  /* background-color: red; */
+  border: 1px solid transparent;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #929292;
+}
+
+::ng-deep .p-card {
+  background-color: var(--secondary-bg-color);
+}
+
+::ng-deep .p-card-subtitle {
+  color: var(--text-color); 
+  /* i think the sub title should be different in light mode */
+}
+
+::ng-deep .p-card-title, p {
+  color: var(--text-color); 
+  /* i think the sub title should be different in light mode */
+}
+
+::ng-deep .p-timeline-event-content,
+::ng-deep .p-timeline-event-opposite {
+  line-height: 1 !important;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-top: -10px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 20px;
+  padding-top: 1.5rem;
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 960px) {
+    ::ng-deep .customized-timeline .p-timeline-event:nth-child(even) {
+      flex-direction: row !important;
+    }
+  
+    ::ng-deep .customized-timeline .p-timeline-event:nth-child(even) .p-timeline-event-content {
+      text-align: left !important;
+    }
+  
+    ::ng-deep .customized-timeline .p-timeline-event-opposite {
+      flex: 0 !important;
+    }
+  
+    ::ng-deep .customized-timeline .p-card {
+      margin-top: 1rem !important;
+    }
+}
+
+/* ::ng-deep {
+  .p-timeline-event-content,
+  .p-timeline-event-opposite {
+    line-height: 1 !important;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  ::ng-deep {
+    .customized-timeline {
+      .p-timeline-event:nth-child(even) {
+        flex-direction: row !important;
+
+        .p-timeline-event-content {
+          text-align: left !important;
+        }
+      }
+
+      .p-timeline-event-opposite {
+        flex: 0 !important;
+      }
+
+      .p-card {
+        margin-top: 1rem !important;
+      }
+    }
+  }
+} */

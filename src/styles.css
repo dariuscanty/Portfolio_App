@@ -1,4 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@font-face {
+    font-family: montserratRegular;
+    src: url(/assets/fonts/Montserrat-Regular.ttf) format('truetype');
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+    --primary-bg-color: #F5F5F5;
+    --secondary-bg-color: #FFFFFF;
+    --text-color: #0F1B2E;
+}
+
+.dark-mode {
+    --primary-bg-color: #242526;
+    --secondary-bg-color: #3A3B3C;
+    --text-color: #FFFFFF;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+

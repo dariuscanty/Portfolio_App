@@ -1,9 +1,36 @@
-<div class="nav-header">
+<mat-card class="nav-header light-mode">
+    <button mat-button [matMenuTriggerFor]="menu" class="hamburger-menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="menu-content">
+        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-home download-btn"></i>Home</button>
+        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-briefcase download-btn"></i>Experience</button>
+        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-desktop download-btn"></i>Skills</button>
+        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-envelope download-btn"></i>Contact</button>
+        <button mat-menu-item class="menu-btn" (click)="downloadResume()"><i class="fas fa-lg fa-download fa-bounce download-btn"></i>Download Resume</button>
+        <button mat-menu-item class="menu-btn">
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox" (click)="toggleTheme()">
+                    <span class="slider round"></span>
+                </label>
+                <mat-icon class="theme-icon">{{icon}}</mat-icon>
+            </div>
+        </button>
+    </mat-menu>
     <div class="btn-container">
-        <button mat-button><i class="fas fa-home"></i> Home</button>
-        <button mat-button><i class="fas fa-briefcase"></i> Experience</button>
-        <button mat-button><i class="fas fa-cogs"></i> Skills</button>
-        <button mat-button><i class="fas fa-envelope"></i> Contact</button>
-        <button mat-button><i class="fas fa-lg fa-download fa-bounce"></i>Download Resume</button>
+        <button mat-button>Home</button>
+        <button mat-button>Experience</button>
+        <button mat-button>Skills</button>
+        <button mat-button>Contact</button>
+        <div class="nav-right">
+            <button mat-button (click)="downloadResume()"><i class="fas fa-lg fa-download fa-bounce download-btn"></i>Download Resume</button>
+            <mat-divider [vertical]="true"></mat-divider>
+            <label class="switch">
+                <input type="checkbox" (click)="toggleTheme()">
+                <span class="slider round"></span>
+            </label>
+            <mat-icon class="theme-icon">{{icon}}</mat-icon>
+        </div>
     </div>
-</div>
+</mat-card>
