@@ -41,6 +41,7 @@
 
 .about-text {
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .about-text h2 {

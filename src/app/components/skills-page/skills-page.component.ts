@@ -12,10 +12,14 @@ export class SkillsPageComponent implements OnInit {
   breakpoint: number = 2;
 
   ngOnInit(): void {
-    this.breakpoint = (window.innerWidth <= 960) ? 2 : 3;
+    this.breakpoint = window.innerWidth <= 640 ? 1 
+      : window.innerWidth <= 1024 ? 2 
+      : 3;
   }
 
   onResize(event: any) {
-    this.breakpoint = (event.target.innerWidth <= 960) ? 2 : 32;
+    this.breakpoint = event.target.innerWidth <= 640 ? 1 
+      : event.target.innerWidth <= 1024 ? 2 
+      : 3;
   }
 }

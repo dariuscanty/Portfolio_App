@@ -18,17 +18,20 @@
 }
 
 ::ng-deep .p-card {
-  background-color: var(--secondary-bg-color);
+  transition: all 0.3s ease;
+  background-color: var(--secondary-bg-color) !important;
 }
 
 ::ng-deep .p-card-subtitle {
-  color: var(--text-color); 
-  /* i think the sub title should be different in light mode */
+  color: var(--text-color) !important; 
 }
 
 ::ng-deep .p-card-title, p {
-  color: var(--text-color); 
-  /* i think the sub title should be different in light mode */
+  color: var(--text-color) !important; 
+}
+
+.card-image {
+  padding: 15px 0;
 }
 
 ::ng-deep .p-timeline-event-content,

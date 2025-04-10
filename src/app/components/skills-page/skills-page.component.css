@@ -16,6 +16,16 @@ h1 {
     color: var(--text-color);
 }
 
+h2 {
+    font-family: 2.5rem;
+    padding-bottom: 10px;
+}
+
+.logo {
+    height: 50% !important;
+    width: 50% !important;
+}
+
 mat-card {
     background-color: var(--secondary-bg-color) !important;
 }
@@ -32,6 +42,7 @@ mat-card {
     height: 100%; 
     width: 50%; 
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 mat-grid-list {
@@ -46,9 +57,31 @@ mat-grid-tile:nth-of-type(odd) mat-card {
     margin-left: 25% !important;
 } */
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+    .logo {
+        padding-bottom: 5px;
+    }
+
     mat-grid-tile:nth-of-type(even) mat-card,
     mat-grid-tile:nth-of-type(odd) mat-card {
         margin: 0 !important;
+    }
+}
+
+@media (max-width: 640px) {
+    h2 {
+        font-size: 2.75rem;
+    }
+}
+
+@media (max-width: 500px) {
+    h2 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 360px) {
+    h2 {
+        font-size: 2rem;
     }
 }
