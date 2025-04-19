@@ -1,10 +1,6 @@
 <h1>Contact</h1>
-<form [formGroup]="contactForm">
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <mat-grid-list cols="4" rowHeight="100px">
-    <!-- <mat-grid-tile colspan="4" rowspan="0.5">
-        <h6>Thank you for visiting my portfolio! I’m always looking for new opportunities to learn and grow, and I’d love to hear from you. Whether you’re interested in collaborating on a project, have a question, or just want to connect, feel free to reach out. I look forward to working together!</h6>
-    </mat-grid-tile> -->
-    
     <mat-grid-tile colspan="2" rowspan="1">
       <mat-form-field appearance="outline">
         <mat-label>First Name</mat-label>
@@ -49,11 +45,11 @@
     </mat-grid-tile>
   </mat-grid-list>
   <div style="text-align: right; width: 100%;">
-    <button style="float: left; margin-left: 2.5%; color: white;" mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Submit</button>
-    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+    <button style="float: left; margin-left: 2.5%; color: white;" mat-raised-button color="primary" type="submit" [disabled]="disableSubmit">Submit</button>
+    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openLinkedIn($event)">
       <i class="fab fa-linkedin"></i>
     </button>
-    <button style="margin-right: 2%;" mat-icon-button aria-label="Example icon button with a open in new tab icon">
+    <button style="margin-right: 2%;" mat-icon-button aria-label="Example icon button with a open in new tab icon" (click)="openGitHub($event)">
       <i class="fab fa-github"></i>
     </button>
   </div>
