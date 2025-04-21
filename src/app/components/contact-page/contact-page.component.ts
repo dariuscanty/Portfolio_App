@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators, F
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AbstractControl } from '@angular/forms';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 
@@ -65,7 +64,6 @@ export class ContactPageComponent implements OnInit {
     if (this.contactForm.valid) {   
       const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-bg-color').trim();
       const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
-      const submitButton = document.querySelector('button[type="submit"]') as HTMLButtonElement;
       const formData = {
         name: this.contactForm.value.name,
         email: this.contactForm.value.email,
@@ -92,8 +90,6 @@ export class ContactPageComponent implements OnInit {
             control?.markAsPristine();
             control?.setErrors(null);
           });
-
-          // submitButton.disabled = true;
         },
         () => {
           Swal.fire({

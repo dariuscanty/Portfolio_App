@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, Renderer2, Output, EventEmitter } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -16,6 +16,7 @@ import { HostListener } from '@angular/core';
   styleUrl: './navigation-header.component.css'
 })
 export class NavigationHeaderComponent implements OnInit {
+  @Output() sectionChange = new EventEmitter<string>();
 
   @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
 
@@ -38,6 +39,10 @@ export class NavigationHeaderComponent implements OnInit {
 
   toggleTheme() {
     this.headerService.switchThemes();
+  }
+
+  navigateToSection(sectionId: string) {
+    this.sectionChange.emit(sectionId);
   }
 
   downloadResume() {

@@ -1,6 +1,18 @@
 
-<navigation-header></navigation-header>
-<app-about-page></app-about-page>
-<experience-page></experience-page>
-<skills-page></skills-page>
-<contact-page></contact-page>
+<navigation-header (sectionChange)="scrollToSection($event)"></navigation-header>
+
+<div id="about" #aboutSection>
+    <app-about-page></app-about-page>
+</div>
+
+<div id="experience" #experienceSection>
+    <experience-page></experience-page>
+</div>
+
+<div id="skills" #skillsSection>
+    <skills-page></skills-page>
+</div>
+
+<div id="contact" #contactSection>
+    <contact-page></contact-page>
+</div>

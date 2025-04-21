@@ -3,10 +3,10 @@
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="menu-content">
-        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-home download-btn"></i>Home</button>
-        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-briefcase download-btn"></i>Experience</button>
-        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-desktop download-btn"></i>Skills</button>
-        <button mat-menu-item class="menu-btn"><i class="fas fa-lg fa-envelope download-btn"></i>Contact</button>
+        <button mat-menu-item class="menu-btn" (click)="navigateToSection('about')"><i class="fas fa-lg fa-home download-btn"></i>Home</button>
+        <button mat-menu-item class="menu-btn" (click)="navigateToSection('experience')"><i class="fas fa-lg fa-briefcase download-btn"></i>Experience</button>
+        <button mat-menu-item class="menu-btn" (click)="navigateToSection('skills')"><i class="fas fa-lg fa-desktop download-btn"></i>Skills</button>
+        <button mat-menu-item class="menu-btn" (click)="navigateToSection('contact')"><i class="fas fa-lg fa-envelope download-btn"></i>Contact</button>
         <button mat-menu-item class="menu-btn" (click)="downloadResume()"><i class="fas fa-lg fa-download download-btn"></i>Download Resume</button>
         <button mat-menu-item class="menu-btn">
             <div class="switch-container">
@@ -19,10 +19,10 @@
         </button>
     </mat-menu>
     <div class="btn-container">
-        <button mat-button>Home</button>
-        <button mat-button>Experience</button>
-        <button mat-button>Skills</button>
-        <button mat-button>Contact</button>
+        <button mat-button (click)="navigateToSection('about')">Home</button>
+        <button mat-button (click)="navigateToSection('experience')">Experience</button>
+        <button mat-button (click)="navigateToSection('skills')">Skills</button>
+        <button mat-button (click)="navigateToSection('contact')">Contact</button>
         <div class="nav-right">
             <button mat-button (click)="downloadResume()"><i class="fas fa-lg fa-download fa-bounce download-btn"></i>Download Resume</button>
             <mat-divider [vertical]="true"></mat-divider>
